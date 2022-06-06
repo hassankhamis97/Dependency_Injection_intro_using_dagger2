@@ -10,14 +10,11 @@ import javax.inject.Named
  * Created by hassankhamis on 06,June,2022
  */
 
-@Component
+@Component(modules = [AppModule::class])
 interface AppComponent {
     val product: Product
     @Component.Builder
     interface Builder {
-
-        @BindsInstance
-        fun bindUser(user: User): Builder
 
         @BindsInstance
         fun quantity(@Named("quantity") quantity: Int): Builder
