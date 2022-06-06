@@ -1,5 +1,6 @@
 package com.hk.dependency_injection_intro.di
 
+import com.hk.dependency_injection_intro.data.models.Product
 import dagger.Component
 
 /**
@@ -8,8 +9,10 @@ import dagger.Component
 
 @Component
 interface AppComponent {
+    val product: Product
     @Component.Builder
     interface Builder {
+
         fun build(): AppComponent
     }
 }
