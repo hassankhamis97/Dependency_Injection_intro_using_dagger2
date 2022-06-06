@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.hk.dependency_injection_intro.data.models.Product
 import com.hk.dependency_injection_intro.data.models.User
 import com.hk.dependency_injection_intro.di.DaggerAppComponent
-import com.hk.dependency_injection_intro.di.DaggerProductComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 //        val appComponent = DaggerAppComponent.builder().price(500).quantity(3).build()
         val appComponent = (application as BaseApplication).appComponent
-        val productComponent = DaggerProductComponent.builder().appComponent(appComponent).price(500).quantity(3).build()
+        val productComponent = appComponent.getProductComponentBuilder().price(500).quantity(3).build()
         val product = productComponent.product
         productComponent.injectMainActivity(this)
 
