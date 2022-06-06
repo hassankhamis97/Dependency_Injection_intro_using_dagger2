@@ -8,7 +8,9 @@ import com.hk.dependency_injection_intro.di.DaggerAppComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
-    private val TAG = "Dependency_Injection_Intro_Using_Dagger2"
+    companion object {
+        const val TAG = "Dependency_Injection_Intro_Using_Dagger2"
+    }
 
     @Inject
     lateinit var userTest: User
