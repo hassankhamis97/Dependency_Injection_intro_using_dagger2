@@ -9,10 +9,9 @@ class MainActivity : AppCompatActivity() {
     private val TAG = "Dependency_Injection_Intro_Using_Dagger2"
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val product = DaggerAppComponent.builder().build().product
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val product = DaggerAppComponent.create().product
         Log.d(TAG, "onCreate: product = $product and user = ${product.user}")
     }
 }
