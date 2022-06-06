@@ -12,7 +12,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val product = DaggerAppComponent.builder().bindUser(User()).build().product
+        val product = DaggerAppComponent.builder().bindUser(User()).price(500).quantity(3).build().product
         Log.d(TAG, "onCreate: product = $product and user = ${product.user}")
+        Log.d(TAG, "onCreate: quantity = ${product.quantity}")
+        Log.d(TAG, "onCreate: price = ${product.price}")
     }
 }
