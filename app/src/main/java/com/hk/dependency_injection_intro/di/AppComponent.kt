@@ -1,5 +1,6 @@
 package com.hk.dependency_injection_intro.di
 
+import com.hk.dependency_injection_intro.MainActivity
 import com.hk.dependency_injection_intro.data.models.Product
 import com.hk.dependency_injection_intro.data.models.User
 import dagger.BindsInstance
@@ -13,6 +14,9 @@ import javax.inject.Named
 @Component(modules = [AppModule::class])
 interface AppComponent {
     val product: Product
+
+    fun injectMainActivity(mainActivity: MainActivity)
+
     @Component.Builder
     interface Builder {
 
