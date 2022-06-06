@@ -3,6 +3,7 @@ package com.hk.dependency_injection_intro
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.hk.dependency_injection_intro.data.models.User
 import com.hk.dependency_injection_intro.di.DaggerAppComponent
 
 class MainActivity : AppCompatActivity() {
@@ -11,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val product = DaggerAppComponent.create().product
+        val product = DaggerAppComponent.builder().bindUser(User()).build().product
         Log.d(TAG, "onCreate: product = $product and user = ${product.user}")
     }
 }

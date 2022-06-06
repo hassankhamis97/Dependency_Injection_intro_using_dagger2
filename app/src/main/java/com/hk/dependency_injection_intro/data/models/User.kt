@@ -5,4 +5,5 @@ import javax.inject.Inject
 /**
  * Created by hassankhamis on 06,June,2022
  */
-class User @Inject constructor()
+//class User @Inject constructor()
+class User()
