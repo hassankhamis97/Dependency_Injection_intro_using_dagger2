@@ -5,9 +5,7 @@ package com.hk.dependency_injection_intro.models
  */
 class Car(val engine: Engine, val tire: Tire) {
     companion object {
-        fun makeCar(): Car {
-            val engine = Engine()
-            val tire = Tire()
+        fun makeCar(engine: Engine, tire: Tire): Car {
             val car = Car(engine, tire)
             return car
         }
