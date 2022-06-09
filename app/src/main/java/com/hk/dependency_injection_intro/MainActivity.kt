@@ -14,6 +14,6 @@ class MainActivity : AppCompatActivity() {
         // Inversion of control
         val engine = Engine()
         val tire = Tire()
-        val car = Car.makeCar(engine, tire)
+        val car = Car(engine, tire)
     }
 }
